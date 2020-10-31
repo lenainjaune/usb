@@ -3,8 +3,7 @@ all usb relative
 
 
 ## Multiboot
-Just install it and copy ISOs and wait that finish with **sync**)
-https://www.ventoy.net/en/doc_start.html
+Just install it and copy ISOs and wait that finish with **sync** : https://www.ventoy.net/en/doc_start.html
 
 Nota : I had a trouble when I tried to mount from thunar "Unable to mount XX GB Filesystem
 Error mounting: mount: unknown filesystem type 'exfat'" => https://www.skyminds.net/ubuntu-resoudre-lerreur-mount-unknown-filesystem-type-exfat/
