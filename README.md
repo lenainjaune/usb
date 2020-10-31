@@ -2,7 +2,7 @@
 all usb relative
 
 
-## Multiboot very usefull
+## Multiboot
 Just install it and copy ISOs and wait that finish with *sync*)
 https://www.ventoy.net/en/doc_start.html
 
