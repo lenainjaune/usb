@@ -11,5 +11,8 @@ Error mounting: mount: unknown filesystem type 'exfat'" => https://www.skyminds.
 TIPS : certain ISO need Memdisk mode (see : https://lecrabeinfo.net/creer-une-cle-usb-multi-boot-avec-ventoy.html#mode-memdisk)
 
 
+## Windows 10 bootable USB
+Voir woeusb
+
 ## Santé d'une clé
 https://www.cyberciti.biz/faq/linux-check-the-physical-health-of-a-usb-stick-flash-drive/
