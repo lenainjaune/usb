@@ -1,8 +1,9 @@
 # usb
 all usb relative
 
+## Linux
 
-## Multiboot
+### Multiboot
 Just install it and copy ISOs and wait that finish with **sync** : https://www.ventoy.net/en/doc_start.html
 
 Nota : I had a trouble when I tried to mount from thunar "Unable to mount XX GB Filesystem
@@ -10,9 +11,10 @@ Error mounting: mount: unknown filesystem type 'exfat'" => https://www.skyminds.
 
 TIPS : certain ISO need Memdisk mode (see : https://lecrabeinfo.net/creer-une-cle-usb-multi-boot-avec-ventoy.html#mode-memdisk)
 
-
-## Windows 10 bootable USB
+### Windows (7/10) installer from USB
 Voir woeusb
 
-## Santé d'une clé
+Nota : l'indicateur de progression est sommaire et l'opération peut prendre du temps entre autre quand est affiché : "Installing GRUB bootloader for legacy PC booting" => laisser se terminer jusqu'au message "Installation réussie!"
+
+### Santé d'une clé
 https://www.cyberciti.biz/faq/linux-check-the-physical-health-of-a-usb-stick-flash-drive/
