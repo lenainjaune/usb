@@ -93,6 +93,7 @@ root@vm-bullseye-xfce:~# rmdir /mnt/iso /mnt/usb
 
 
 => installation Windows 7 Intégral (ultimate) SP1 depuis fr_windows_7_aio_with_sp1_x64.iso testée avec succès en vUSB !
+=> installation Windows 7 All SP1 depuis win7all.iso (construit par mes soins) testée avec succès en pUSB !
 ```
 
 ### Santé d'une clé
