@@ -3,6 +3,7 @@ all usb relative
 
 ## Linux
 ### Installer une clé bootable (depuis une console en root)
+TODO : comprendre pourquoi cette solution ne fonctionne pas pour tous les ISOs
 
 Avertissement : cette méthode est la plus directe (pas de dépendances) et la plus sécurisée MAIS elle crée une clé en lecture seule.
 
