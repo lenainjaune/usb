@@ -2,6 +2,51 @@
 all usb relative
 
 ## Linux
+### Installer une clé bootable (depuis une console en root)
+
+Avertissement : cette méthode est la plus directe (pas de dépendances) et la plus sécurisée MAIS elle crée une clé en lecture seule.
+
+Débrancher la clé si elle était branchée.
+
+Taper et exécuter : 
+```sh
+journalctl -f
+...
+mai 23 12:43:22 host sudo[6871]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+```
+=> plusieurs lignes s'affichent, la commande **journalctl** suit les actions en cours (paramètre -f = follow = suivre)
+
+Taper plusieurs sauts de lignes pour clarifier l'affichage et laisser la console ouverte
+
+Brancher la clé ...
+
+... après quelques instants, la console affiche entre autres ces lignes :
+```sh
+mai 23 12:43:41 host kernel: usb-storage 2-12:1.0: USB Mass Storage device detected
+mai 23 12:43:42 host kernel: scsi 7:0:0:0: Direct-Access              USB Flash Memory 1.00 PQ: 0 ANSI: 2
+mai 23 12:43:42 host kernel: sd 7:0:0:0: [sdg] 3913664 512-byte logical blocks: (2.00 GB/1.87 GiB)
+mai 23 12:43:42 host kernel: sd 7:0:0:0: [sdg] Attached SCSI removable disk
+```
+Interrompre la commande avec ctrl + c
+
+=> **^C** s'affiche et on revient à la console
+
+=> les informations de dessus nous informent qu'une nouvelle clé USB à été détectée (ici elle a une capacité de 2Go) et elle sera accessible depuis le périphérique (ou device) **sdg**
+
+Taper et exécuter :
+```sh
+CLE=sdg
+```
+Attention : il faut impérativement que **CLE** contienne le bon périphérique, sinon on va supprimer de manière irréversible le contenu d'un autre disque
+
+Taper et exécuter :
+```sh
+dd if=/chemin/fichier.iso of=/dev/$CLE && sync
+```
+
+Note : la commande **sync** assure que les données sont complètements synchronisées, ce qui assure que les données sont réellement copiées ; on peut alors enlever la clé en toute sécurité
+
+Dans mon cas ça donne : dd if=/home/user/Téléchargements/debian-11.3.0-amd64-netinst.iso of=/dev/$CLE && sync
 
 ### Multiboot
 Just install it and copy ISOs and wait that finish with **sync** : https://www.ventoy.net/en/doc_start.html
