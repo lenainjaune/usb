@@ -1,8 +1,8 @@
 # usb
 all usb relative
 
-## Linux
-### Installer une clé bootable (depuis une console en root)
+# Linux
+## Installer une clé bootable (depuis une console en root)
 TODO : comprendre pourquoi cette solution ne fonctionne pas pour tous les ISOs
 
 Avertissement : cette méthode est la plus directe (pas de dépendances) et la plus sécurisée MAIS elle crée une clé en lecture seule.
@@ -49,20 +49,21 @@ Note : la commande **sync** assure que les données sont complètements synchron
 
 Dans mon cas ça donne : dd if=/home/user/Téléchargements/debian-11.3.0-amd64-netinst.iso of=/dev/$CLE && sync
 
-### Multiboot
+## Multiboot
 Just install it and copy ISOs and wait that finish with **sync** : https://www.ventoy.net/en/doc_start.html
 
-Nota : I had a trouble when I tried to mount from thunar "Unable to mount XX GB Filesystem
-Error mounting: mount: unknown filesystem type 'exfat'" => https://www.skyminds.net/ubuntu-resoudre-lerreur-mount-unknown-filesystem-type-exfat/
+Nota : en cas d'erreur "unknown filesystem type 'exfat'" voir rubrique "Erreurs et dépannages"
 
 TIPS : certain ISO need Memdisk mode (see : https://lecrabeinfo.net/creer-une-cle-usb-multi-boot-avec-ventoy.html#mode-memdisk)
 
-### Windows (7/10) installer from USB
-#### woeusb
+## USB Windows (7/10) from Linux
+
+## woeusb
 Avec woeusb (GUI)
 
 Nota : sous woeusb l'indicateur de progression est sommaire et l'opération peut prendre du temps entre autre quand est affiché : "Installing GRUB bootloader for legacy PC booting" => laisser se terminer jusqu'au message "Installation réussie!"
-#### Bash
+
+## Bash
 TODO : brouillon bien vérifier que tout fonctionne comme attendu !
 [Source](https://thornelabs.net/posts/create-a-bootable-windows-7-or-10-usb-drive-in-linux.html) (CLI)
 ```sh
@@ -144,3 +145,16 @@ root@vm-bullseye-xfce:~# rmdir /mnt/iso /mnt/usb
 
 ### Santé d'une clé
 https://www.cyberciti.biz/faq/linux-check-the-physical-health-of-a-usb-stick-flash-drive/
+
+## Erreurs et dépannages
+
+### Erreur lors du montage d'une clé en NTFS
+voir [ici](https://askubuntu.com/questions/1377989/unknow-error-when-mounting-dev-sdb1)
+
+```sudo ntfsfix /dev/sdb1```
+
+### Erreur lors du montage d'une clé système de fichier exfat inconnu
+
+I had a trouble when I tried to mount from thunar "Unable to mount XX GB Filesystem Error mounting: mount: unknown filesystem type 'exfat'"
+
+=> voir [ici](https://www.skyminds.net/ubuntu-resoudre-lerreur-mount-unknown-filesystem-type-exfat/)
